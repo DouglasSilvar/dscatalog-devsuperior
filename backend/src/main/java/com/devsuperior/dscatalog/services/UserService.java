@@ -105,7 +105,7 @@ public class UserService implements UserDetailsService {
             logger.error("User not found".concat(username));
             throw new UsernameNotFoundException("Email not found");
         }
-        logger.error("User found".concat(username));
+        logger.info("User found: ".concat(username));
         return user;
     }
 }
