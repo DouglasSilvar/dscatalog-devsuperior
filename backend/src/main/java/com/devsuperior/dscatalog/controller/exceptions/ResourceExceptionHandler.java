@@ -1,4 +1,4 @@
-package com.devsuperior.dscatalog.resources.exceptions;
+package com.devsuperior.dscatalog.controller.exceptions;
 
 import com.devsuperior.dscatalog.services.exceptions.DataBaseException;
 import com.devsuperior.dscatalog.services.exceptions.ResourceNotFoundException;
@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.xml.crypto.Data;
 import java.time.Instant;
 
 @ControllerAdvice
