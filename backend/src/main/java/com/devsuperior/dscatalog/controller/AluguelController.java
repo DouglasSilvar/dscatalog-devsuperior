@@ -39,4 +39,10 @@ public class AluguelController {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
+
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<AluguelDTO> update(@PathVariable Long id, @RequestBody AluguelDTO dto){
+        dto = service.update(id,dto);
+        return ResponseEntity.ok().body(dto);
+    }
 }

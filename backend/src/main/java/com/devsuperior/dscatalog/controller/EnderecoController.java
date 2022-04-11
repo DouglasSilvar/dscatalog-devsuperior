@@ -39,4 +39,10 @@ public class EnderecoController {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
+
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<EnderecoDTO> update(@PathVariable Long id,@RequestBody EnderecoDTO dto){
+        dto = service.update(id,dto);
+        return ResponseEntity.ok().body(dto);
+    }
 }

@@ -1,7 +1,9 @@
 package com.devsuperior.dscatalog.services;
 
 import com.devsuperior.dscatalog.dto.AluguelDTO;
+import com.devsuperior.dscatalog.dto.EnderecoDTO;
 import com.devsuperior.dscatalog.entities.Aluguel;
+import com.devsuperior.dscatalog.entities.Endereco;
 import com.devsuperior.dscatalog.repositories.AluguelRepository;
 import com.devsuperior.dscatalog.services.exceptions.DataBaseException;
 import com.devsuperior.dscatalog.services.exceptions.ResourceNotFoundException;
@@ -12,6 +14,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -46,6 +49,22 @@ public class AluguelService {
             throw new ResourceNotFoundException("Id not found " + id);
         }catch(DataIntegrityViolationException e){
             throw new DataBaseException("Integrity violation");
+        }
+    }
+
+    public AluguelDTO update(Long id, AluguelDTO dto) {
+        try {
+            Aluguel entity = repository.getOne(id);
+            entity.setEquipamento(dto.getEquipamento());
+            entity.setEndereco(dto.getEndereco());
+            entity.setCliente(dto.getCliente());
+            entity.setDataInicio(dto.getDataInicio());
+            entity.setDataTermino(dto.getDataTermino());
+            entity.setValorDoContrato(dto.getValorDoContrato());
+            entity = repository.save(entity);
+            return new AluguelDTO(entity);
+        }catch (EntityNotFoundException e){
+            throw new ResourceNotFoundException("Id not found "+ id);
         }
     }
 }

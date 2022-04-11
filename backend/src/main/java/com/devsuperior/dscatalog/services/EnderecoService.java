@@ -15,6 +15,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -52,6 +53,22 @@ public class EnderecoService {
             throw new ResourceNotFoundException("Id not found " + id);
         }catch(DataIntegrityViolationException e){
             throw new DataBaseException("Integrity violation");
+        }
+    }
+
+    public EnderecoDTO update(Long id, EnderecoDTO dto) {
+        try {
+            Endereco entity = repository.getOne(id);
+            entity.setUf(dto.getUf());
+            entity.setBairro(dto.getBairro());
+            entity.setNumero(dto.getNumero());
+            entity.setLocalidade(dto.getLocalidade());
+            entity.setLogradouro(dto.getLogradouro());
+            entity.setCep(dto.getCep());
+            entity = repository.save(entity);
+            return new EnderecoDTO(entity);
+        }catch (EntityNotFoundException e){
+            throw new ResourceNotFoundException("Id not found "+ id);
         }
     }
 }

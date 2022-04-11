@@ -1,5 +1,6 @@
 package com.devsuperior.dscatalog.controller;
 
+import com.devsuperior.dscatalog.dto.EnderecoDTO;
 import com.devsuperior.dscatalog.dto.EquipamentoDTO;
 import com.devsuperior.dscatalog.dto.UserDTO;
 import com.devsuperior.dscatalog.services.EquipamentoService;
@@ -37,5 +38,11 @@ public class EquipamentoController {
     public ResponseEntity<EquipamentoDTO> delete(@PathVariable Long id){
         service.delete(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<EquipamentoDTO> update(@PathVariable Long id, @RequestBody EquipamentoDTO dto){
+        dto = service.update(id,dto);
+        return ResponseEntity.ok().body(dto);
     }
 }

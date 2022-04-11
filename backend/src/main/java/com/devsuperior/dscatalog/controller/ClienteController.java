@@ -2,6 +2,7 @@ package com.devsuperior.dscatalog.controller;
 
 import com.devsuperior.dscatalog.dto.ClienteDTO;
 import com.devsuperior.dscatalog.dto.EnderecoDTO;
+import com.devsuperior.dscatalog.dto.EquipamentoDTO;
 import com.devsuperior.dscatalog.services.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -37,5 +38,11 @@ public class ClienteController {
     public ResponseEntity<ClienteDTO> delete(@PathVariable Long id){
         service.delete(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<ClienteDTO> update(@PathVariable Long id, @RequestBody ClienteDTO dto){
+        dto = service.update(id,dto);
+        return ResponseEntity.ok().body(dto);
     }
 }
