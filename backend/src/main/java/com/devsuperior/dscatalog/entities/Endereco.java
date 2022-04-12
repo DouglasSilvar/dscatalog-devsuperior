@@ -1,9 +1,14 @@
 package com.devsuperior.dscatalog.entities;
 
+import org.hibernate.annotations.Proxy;
+import org.springframework.transaction.annotation.Transactional;
+
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
+@Transactional
+@Proxy(lazy=false)
 @Table(name = "tb_endereco")
 public class Endereco {
 

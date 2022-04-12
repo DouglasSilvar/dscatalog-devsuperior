@@ -1,10 +1,13 @@
 package com.devsuperior.dscatalog.entities;
 
+import org.hibernate.annotations.Proxy;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
+@Proxy(lazy=false)
 @Table(name = "tb_aluguel")
 public class Aluguel {
 

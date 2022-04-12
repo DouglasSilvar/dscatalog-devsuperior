@@ -1,9 +1,12 @@
 package com.devsuperior.dscatalog.entities;
 
+import org.hibernate.annotations.Proxy;
+
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
+@Proxy(lazy=false)
 @Table(name = "tb_cliente")
 public class Cliente {
 
