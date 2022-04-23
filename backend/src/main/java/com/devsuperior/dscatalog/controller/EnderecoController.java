@@ -19,13 +19,13 @@ public class EnderecoController {
 
     @Autowired
     EnderecoService service;
-
+    @CrossOrigin
     @GetMapping
     public ResponseEntity<List<EnderecoDTO>> findAll() {
         List<EnderecoDTO> list = service.findAll();
         return ResponseEntity.ok().body(list);
     }
-
+    @CrossOrigin
     @PostMapping
     public ResponseEntity<EnderecoDTO> insert(@Valid @RequestBody EnderecoDTO dto) {
         dto = service.insert(dto);
@@ -33,13 +33,13 @@ public class EnderecoController {
                 .buildAndExpand(dto.getId()).toUri();
         return ResponseEntity.created(uri).body(dto);
     }
-
+    @CrossOrigin
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<EnderecoDTO> delete(@PathVariable Long id){
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
-
+    @CrossOrigin
     @PutMapping(value = "/{id}")
     public ResponseEntity<EnderecoDTO> update(@PathVariable Long id,@RequestBody EnderecoDTO dto){
         dto = service.update(id,dto);
