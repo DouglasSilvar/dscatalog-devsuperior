@@ -1,9 +1,7 @@
 package com.devsuperior.dscatalog.services;
 
 import com.devsuperior.dscatalog.dto.ClienteDTO;
-import com.devsuperior.dscatalog.dto.EnderecoDTO;
 import com.devsuperior.dscatalog.entities.Cliente;
-import com.devsuperior.dscatalog.entities.Endereco;
 import com.devsuperior.dscatalog.repositories.ClienteRepository;
 import com.devsuperior.dscatalog.services.exceptions.DataBaseException;
 import com.devsuperior.dscatalog.services.exceptions.ResourceNotFoundException;

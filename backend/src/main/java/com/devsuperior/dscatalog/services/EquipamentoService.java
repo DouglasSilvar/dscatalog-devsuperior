@@ -1,9 +1,7 @@
 package com.devsuperior.dscatalog.services;
 
 
-import com.devsuperior.dscatalog.dto.EnderecoDTO;
 import com.devsuperior.dscatalog.dto.EquipamentoDTO;
-import com.devsuperior.dscatalog.entities.Endereco;
 import com.devsuperior.dscatalog.entities.Equipamento;
 import com.devsuperior.dscatalog.repositories.EquipamentoRepository;
 import com.devsuperior.dscatalog.services.exceptions.DataBaseException;

@@ -1,9 +1,9 @@
 package com.devsuperior.dscatalog.services.validation;
 
+import com.devsuperior.dscatalog.controller.exceptions.FieldMEssage;
 import com.devsuperior.dscatalog.dto.UserInsertDTO;
 import com.devsuperior.dscatalog.entities.User;
 import com.devsuperior.dscatalog.repositories.UserRepository;
-import com.devsuperior.dscatalog.controller.exceptions.FieldMEssage;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.validation.ConstraintValidator;

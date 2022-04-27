@@ -1,8 +1,6 @@
 package com.devsuperior.dscatalog.controller;
 
 import com.devsuperior.dscatalog.dto.ClienteDTO;
-import com.devsuperior.dscatalog.dto.EnderecoDTO;
-import com.devsuperior.dscatalog.dto.EquipamentoDTO;
 import com.devsuperior.dscatalog.services.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

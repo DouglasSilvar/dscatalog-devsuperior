@@ -2,7 +2,6 @@ package com.devsuperior.dscatalog.controller;
 
 
 import com.devsuperior.dscatalog.dto.AluguelDTO;
-import com.devsuperior.dscatalog.dto.ClienteDTO;
 import com.devsuperior.dscatalog.services.AluguelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

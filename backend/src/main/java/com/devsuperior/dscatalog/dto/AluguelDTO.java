@@ -4,6 +4,7 @@ import com.devsuperior.dscatalog.entities.Aluguel;
 import com.devsuperior.dscatalog.entities.Cliente;
 import com.devsuperior.dscatalog.entities.Endereco;
 import com.devsuperior.dscatalog.entities.Equipamento;
+
 import java.util.Date;
 
 public class AluguelDTO {
